@@ -14,7 +14,21 @@ export const Home = () => {
             </div>
 
             <div className="categories-container">
-                <h2>Categories</h2>
+                <h2 className="categories-heading">Categories</h2>
+                <div className="cake-category-container">
+                    <div className="single-cake-category">
+                        <img src= "https://pic.warmoven.in/wysiwyg/Birthday_1_.jpg" />
+                        <h3>Birthday specials</h3>
+                    </div>
+                    <div className="single-cake-category">
+                        <img src= "https://pic.warmoven.in/wysiwyg/Anniversary1.jpg" />
+                        <h3>Anniversary specials</h3>
+                    </div>
+                    <div className="single-cake-category">
+                        <img src= "https://pic.warmoven.in/wysiwyg/Baby_Shower_1.jpg" />
+                        <h3>Baby shower</h3>
+                    </div>
+                </div>
             </div>
         </div>
     )
