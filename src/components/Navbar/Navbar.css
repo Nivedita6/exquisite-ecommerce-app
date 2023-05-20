@@ -1,0 +1,34 @@
+/*Navbar styles */
+
+.nav-header{
+   top: 0;
+   position: sticky; 
+   z-index: 10;
+}
+.navbar{
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: palevioletred;
+}
+
+.nav-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.nav-right{
+    display: flex;
+    list-style: none;
+    gap:1rem;
+}
+
+.nav-left a{
+    text-decoration: none;
+}
+
+.icons{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}

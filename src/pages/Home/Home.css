@@ -1,0 +1,22 @@
+.home-img-container{
+    position:relative;
+}
+
+.bg-img-container {  
+    background-image: url("../../assets/cake-home-image.jpg");
+    height: 40rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.home-image-text{
+    position: absolute;
+    left: 18%;
+    bottom: 35%;
+}
+
+.home-shop-now-btn{
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
