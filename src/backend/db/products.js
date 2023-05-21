@@ -29,6 +29,13 @@ export const products = [
   },
   {
     _id: uuid(),
+    title: "Mom to be Cake",
+    img: "https://pic.warmoven.in/catalog/product/cache/0a642de3c47f06d58ee71056ac9b2d87/2/_/2_1.png",
+    price: "899",
+    categoryName: "baby-shower",
+  },
+  {
+    _id: uuid(),
     title: "I Love You Heart Cake",
     img: "https://pic.warmoven.in/catalog/product/cache/0a642de3c47f06d58ee71056ac9b2d87/i/-/i-love-you-heart-cake.jpg",
     price: "799",
@@ -47,6 +54,13 @@ export const products = [
     img: "https://pic.warmoven.in/catalog/product/cache/0a642de3c47f06d58ee71056ac9b2d87/p/r/premium-belgian-chocolate-velvet-cake.jpg",
     price: "1099",
     categoryName: "birthday-specials",
+  },
+  {
+    _id: uuid(),
+    title: "Baby Shower Cake Baby Feet",
+    img: "https://pic.warmoven.in/catalog/product/cache/0a642de3c47f06d58ee71056ac9b2d87/b/a/baby_shower_cake_baby_feet.png.mst.webp",
+    price: "1999",
+    categoryName: "baby-shower",
   },
   {
     _id: uuid(),
@@ -92,9 +106,9 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "Heart Shaped Naked Cream Cake",
-    img: "https://pic.warmoven.in/catalog/product/cache/0a642de3c47f06d58ee71056ac9b2d87/h/e/heart-shaped-naked-cream-cake.jpg",
-    price: "799",
-    categoryName: "birthday-specials",
+    title: "Teddy Theme Baby Shower Cake",
+    img: "https://pic.warmoven.in/catalog/product/cache/0a642de3c47f06d58ee71056ac9b2d87/t/e/teddy-theme-baby-shower-cake.jpg",
+    price: "2799",
+    categoryName: "baby-shower",
   },
 ];

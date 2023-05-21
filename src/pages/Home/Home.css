@@ -1,12 +1,18 @@
+.home-container{
+    flex-grow: 1;
+    padding: 3rem 4rem;
+}
+
 .home-img-container{
     position:relative;
 }
 
 .bg-img-container {  
     background-image: url("../../assets/cake-home-image.jpg");
-    height: 40rem;
+    height: 39rem;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .home-image-text{
@@ -19,4 +25,58 @@
     padding: 1rem;
     cursor: pointer;
     font-weight: bold;
+}
+
+.categories-heading{
+    padding: 5rem 3rem;
+}
+
+
+
+.single-cake-category, .cake-category-row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-gap: 1rem;
+    gap: 1rem;
+}
+
+.single-cake-category img{
+    height: 20rem;
+    width: 23rem;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.footer-container{
+    margin-top: 5rem;
+    display: flex;
+    background: palevioletred;
+    justify-content: space-around;
+    position: relative;
+    padding: 2rem 3rem;
+}
+
+
+
+.footer-section-left{
+    width: 50%;
+    align-items:flex-start;
+}
+
+.footer-section-left-heading{
+    padding-bottom: 1rem;
+}
+
+
+.footer-link-heading{
+    font-size: 1.1rem;
+}
+.footer-section-right li{
+    list-style: none;
+    line-height: 2.5rem;
+}
+
+.footer-section-right li a{
+    text-decoration: none;
 }
