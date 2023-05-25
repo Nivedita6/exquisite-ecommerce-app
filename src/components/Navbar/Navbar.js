@@ -6,7 +6,7 @@ export const Navbar = () => {
         <div className="nav-header">
             <ul className="navbar">
                 <div className="nav-main">
-                    <div className="nav-left"><NavLink to = "/"><h2>exquisite</h2></NavLink></div>
+                    <div className="nav-left"><NavLink to = "/"><h2>exquisitehomebaker</h2></NavLink></div>
                     <div className="search-input">
                         <input type = "search" name = "search" className="search-bar"/>
                         <i className="fa fa-search" ></i>

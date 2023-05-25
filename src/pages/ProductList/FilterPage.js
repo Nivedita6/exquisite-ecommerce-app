@@ -9,7 +9,7 @@ export const FilterPage = () => {
             <div className="filter-container">
                 <div className="filter-heading">
                     <h4>FILTERS</h4>
-                    <input type="reset" value= "clear"/>
+                    <input type="reset" value= "clear" className = "clear-btn"/>
                 </div>
 
                 <div className="filter-price">

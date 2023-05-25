@@ -37,7 +37,7 @@ export const Home = () => {
             </div>
             <footer className="footer-container">
                 <div className="footer-section-left">
-                    <h3 className="footer-section-left-heading">exquisitehomebaker</h3>
+                    <h2 className="footer-section-left-heading">exquisitehomebaker</h2>
                     <p>Freshly baked cakes made with the finest ingredients. A wide range of flavours to choose from, including egg and eggless options.
                         Convenient online ordering, so you can order from the comfort of your own home in affordable prices.</p>
                     <p>Privacy Policy</p>
