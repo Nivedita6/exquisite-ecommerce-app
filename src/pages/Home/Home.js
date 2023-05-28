@@ -1,10 +1,13 @@
 import "./Home.css";
 import {Link} from "react-router-dom";
-import { categories } from "../../backend/db/categories";
-import { useState } from "react";
+import { useContext, useState } from "react";
+//import { categories } from "../../backend/db/categories";
+import { DataContext } from "../../contexts/DataContext";
 
 export const Home = () => {
 
+    const {categoryData} = useContext(DataContext);
+    console.log(typeof categoryData)
     
     return(
         <>
@@ -21,7 +24,7 @@ export const Home = () => {
                 <div className="categories-container">
                     <h1 className="categories-heading">Categories</h1>
                     <div className="cake-category-row">
-                        {categories.map(category => {
+                        {categoryData.map(category => {
                             return(
                                 <div className="single-cake-category" key = {category._id}>
                                     <div className="category-box">
