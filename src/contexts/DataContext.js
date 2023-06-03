@@ -1,21 +1,25 @@
-import {createContext, useEffect, useState} from "react";
+import {createContext, useEffect, useReducer} from "react";
+import { initialState, DataReducer } from "../Reducers/dataReducer";
+import { products } from "../backend/db/products";
 
 export const DataContext = createContext();
 
 export const DataProvider = ({children}) => {
-    const [productData, setProductData] = useState([]);
-    const [categoryData, setCategoryData] = useState([]);
 
+    const [state, dispatch] = useReducer(DataReducer, initialState);
     const fetchData = async() => {
         try{
             const productResponse = await fetch("/api/products");
-            const productData = await productResponse.json();
+            if(productResponse.status === 200){
+                const productData = await productResponse.json();
+                dispatch({type: "SET_PRODUCTS", payload: productData?.products})
+            }
             
-            setProductData(productData);
-
             const categoryResponse = await fetch("/api/categories");
-            const categoryData = await categoryResponse.json();
-            setCategoryData(categoryData);
+            if(categoryResponse.status === 200){
+                const categoryData = await categoryResponse.json();
+                dispatch({type: "SET_CATEGORIES", payload: categoryData?.categories})
+            }
             
         }catch(error){
             console.error(error);
@@ -23,10 +27,15 @@ export const DataProvider = ({children}) => {
         
     }
 
+    const searchProductHandler = (e) => {
+        dispatch({ type : "SET_SEARCH", payload : e.target.value })
+    }
+    const searchedProducts = state?.search !== "" ? products?.filter(product => product?.title?.toLowerCase().includes(state?.search)) : products;
+
     useEffect(() => {fetchData()}, [])
 
     return(
-        <DataContext.Provider value = {{productData, categoryData}}>{children}</DataContext.Provider>
+        <DataContext.Provider value = {{ searchProductHandler,  products: searchedProducts,  categories: state.categories, search: state?.search}}>{children}</DataContext.Provider>
     )
 
 }

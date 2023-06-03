@@ -1,21 +1,34 @@
 import { FilterPage } from "./FilterPage";
+import { useEffect, useState } from "react";
 import "./Products.css";
-import { products } from "../../backend/db/products";
 import { ProductCard } from "./ProductCard";
+import { useContext } from "react";
+import { DataContext } from "../../contexts/DataContext";
 
 export const Products = () => {
+    
+    const {products} = useContext(DataContext);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    
+    // useEffect(() => {setFilteredProducts(productData.products)}, [productData.products]);
+
     
     return (
         <div className="product-main-container">
             <FilterPage />
             <div className="product-list-container">
                 <div className="product-list-header">
-                    <h3>Show all products</h3>    
+                    <h3>Show all products ({products?.length})</h3>    
                 </div>
                 <div className="product-grid">
-                    {products.map(product => (
-                        <ProductCard key={product._id} product = {product} />
-                    ))}
+                    {
+                        products?.length ?  products?.map(product => (
+                            <ProductCard key={product._id} product = {product} />
+                        )) : 
+                            <h1>No products available</h1>
+                    
+                    }
+                    
                 </div>
             </div>
         </div>

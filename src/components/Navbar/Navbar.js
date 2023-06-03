@@ -1,14 +1,21 @@
-import { NavLink} from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
 import "./Navbar.css";
+import { useContext } from "react";
+import {DataContext} from "../..";
+
 
 export const Navbar = () => {
+    const navigate = useNavigate();
+    const {search, searchProductHandler} = useContext(DataContext);
+   
+
     return(
         <div className="nav-header">
             <ul className="navbar">
                 <div className="nav-main">
-                    <div className="nav-left"><NavLink to = "/"><h2>exquisitehomebaker</h2></NavLink></div>
+                    <div className="nav-left" onClick={() => navigate("/")}><h2>exquisitehomebaker</h2></div>
                     <div className="search-input">
-                        <input type = "search" name = "search" className="search-bar"/>
+                        <input type = "search" name = "search" className="search-bar" value={search} onChange = {(e) => searchProductHandler(e)} />
                         <i className="fa fa-search" ></i>
                     </div>
                     <ul className="nav-right">
