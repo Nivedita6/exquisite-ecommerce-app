@@ -1,5 +1,4 @@
 import { FilterPage } from "./FilterPage";
-import { useEffect, useState } from "react";
 import "./Products.css";
 import { ProductCard } from "./ProductCard";
 import { useContext } from "react";
@@ -8,9 +7,6 @@ import { DataContext } from "../../contexts/DataContext";
 export const Products = () => {
     
     const {products} = useContext(DataContext);
-    const [filteredProducts, setFilteredProducts] = useState([]);
-    
-    // useEffect(() => {setFilteredProducts(productData.products)}, [productData.products]);
 
     
     return (

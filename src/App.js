@@ -1,5 +1,4 @@
 import "./App.css";
-import {BrowserRouter as Router} from "react-router-dom";
 import Mockman from "mockman-js"
 import {Route, Routes} from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
@@ -14,8 +13,7 @@ import {Login} from "./pages/Profile/Login";
 function App() {
   return (  
     <div className="App">
-      <Router>
-        <Navbar />
+      <Navbar />
         <Routes>
           <Route path = "/" element = {<Home />}></Route>
           <Route path = "/products" element = {<Products />}></Route>
@@ -26,7 +24,6 @@ function App() {
         </Routes>
         
         {/* <Mockman />  */}
-      </Router>
       
     </div>
   );

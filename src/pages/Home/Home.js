@@ -1,12 +1,13 @@
 import "./Home.css";
 import {Link} from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 
 export const Home = () => {
     
 
-    const {categories} = useContext(DataContext);
+    const {categories, categoryClickHandler} = useContext(DataContext);
+    
     
 
     return(
@@ -26,7 +27,7 @@ export const Home = () => {
                     <div className="cake-category-row">
                         {categories?.map(category => {
                             return(
-                                <div className="single-cake-category" key = {category._id} >
+                                <div className="single-cake-category" key = {category._id} onClick = {() => categoryClickHandler(category._id)}>
                                     <div className="category-box">
                                         <img src={category.img}></img>
                                         <h3>{category.categoryName}</h3>

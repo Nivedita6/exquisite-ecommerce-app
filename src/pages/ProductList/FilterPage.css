@@ -35,3 +35,14 @@
     flex-direction: column;
     gap: 0.5rem;
 }
+
+.range-values{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filter-sorting{
+    display: flex;
+    flex-direction: column;
+}
