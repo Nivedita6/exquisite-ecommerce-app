@@ -1,3 +1,7 @@
 export const Cart = ()=> {
-    return <h1>This is carts page.</h1>
+    return (
+        <>
+            <h1>This is carts page.</h1>
+        </>
+    ) 
 }
