@@ -4,6 +4,7 @@ import "./ProductDetails.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
+import { isProductInCart, isProductInWishlist } from "../../utils/commonUtils";
 
 export const ProductDetails = () => {
     
@@ -11,8 +12,18 @@ export const ProductDetails = () => {
     const {productDetail, products, state, dispatch} = useContext(DataContext);
     const totalStars = 5;
     const activeStars = productDetail?.rating;
-
     const product = products?.find(product => product._id === productDetail._id);
+
+    const isInCart = isProductInCart(product, token, state);
+    const isInWishlist = isProductInCart(product, token, state);
+
+    const addToCartHandler = (product) => {
+        token ? isInCart ? navigate("/cart") : handleAddToCart(product, token, dispatch) : navigate("/login")
+    }
+
+    const addToWishlistHandler = (product) => {
+        token ? isInWishlist ? handleRemoveFromWishlist(product, token, dispatch) : handleAddToWishlist(product, token, dispatch) : navigate("/login")
+    }
     
     return (
         <>
