@@ -1,10 +1,12 @@
 import "./Home.css";
+import {  useNavigate } from "react-router-dom";
 import {Link} from "react-router-dom";
 import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 
 export const Home = () => {
     
+    const navigate = useNavigate();
 
     const {categories, categoryClickHandler} = useContext(DataContext);
     
@@ -17,7 +19,7 @@ export const Home = () => {
                     <div className = "bg-img-container"></div>
                     <div className="home-image-text">
                         <Link to = "./products">
-                            <button className="home-shop-now-btn">SHOP NOW</button>
+                            <button className="home-shop-now-btn" onClick={() => navigate("/products")}>SHOP NOW</button>
                         </Link>
                     </div>    
                 </div>
@@ -25,7 +27,7 @@ export const Home = () => {
                 <div className="categories-container">
                     <h1 className="categories-heading">Categories</h1>
                     <div className="cake-category-row">
-                        {categories?.map(category => {
+                        {categories && categories?.map(category => {
                             return(
                                 <div className="single-cake-category" key = {category._id} onClick = {() => categoryClickHandler(category._id)}>
                                     <div className="category-box">

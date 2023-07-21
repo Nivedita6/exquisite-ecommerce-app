@@ -44,7 +44,7 @@ export const products = [
     img: "https://pic.warmoven.in/catalog/product/cache/0a642de3c47f06d58ee71056ac9b2d87/i/-/i-love-you-heart-cake.jpg",
     price: "799",
     categoryName: "anniversary-specials",
-    rating: 4.5
+    rating: 2.5
   },
   {
     _id: uuid(),

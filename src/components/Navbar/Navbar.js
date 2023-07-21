@@ -15,7 +15,9 @@ export const Navbar = () => {
                 <div className="nav-main">
                     <div className="nav-left" onClick={() => navigate("/")}><h2>exquisitehomebaker</h2></div>
                     <div className="search-input">
-                        <input type = "search" name = "search" className="search-bar" value={search} onChange = {(e) => searchProductHandler(e)} />
+                        <input type = "text"  className="search-bar" value={search} onChange = {(e) => {
+                            navigate("/products")  
+                            searchProductHandler(e)}} />
                         <i className="fa fa-search" ></i>
                     </div>
                     <ul className="nav-right">
