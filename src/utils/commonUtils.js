@@ -29,4 +29,4 @@ export const clearWishlist = (dispatch) => {
     dispatch({type: "SET_INITIAL_WISHLIST", payload: []})
 }
 
-// export const calculatePercentOff = (discountedPrice, originalPrice) => Math.floor()
+//export const calculatePercentOff = (discountedPrice, originalPrice) => Math.floor(((originalPrice - discountedPrice) * 100)/ originalPrice);
