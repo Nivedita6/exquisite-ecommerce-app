@@ -6,7 +6,8 @@ export const initialState = {
     categoryFilter : [],
     rating: 0,
     sortByPrice: "",
-    priceRange: 0
+    priceRange: 0,
+    productDetail: {}
 }
 
 export const DataReducer = (state, action) => {
