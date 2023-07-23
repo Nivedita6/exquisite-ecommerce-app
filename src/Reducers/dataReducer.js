@@ -2,6 +2,7 @@ export const initialState = {
     products: [],
     categories: [],
     cart: [],
+    wishlist: [],
     search: "",
     categoryFilter : [],
     rating: 0,
