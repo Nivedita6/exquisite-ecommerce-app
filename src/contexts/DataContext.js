@@ -1,8 +1,6 @@
 import {createContext, useEffect, useReducer, useState} from "react";
 import { initialState, DataReducer } from "../Reducers/dataReducer";
-import { products } from "../backend/db/products";
 import { useNavigate } from "react-router-dom";
-import { categories } from "../backend/db/categories";
 
 export const DataContext = createContext();
 

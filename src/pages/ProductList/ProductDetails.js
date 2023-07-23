@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom";
-import { products } from "../../backend/db/products";
 import "./ProductDetails.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import { isProductInCart, isProductInWishlist } from "../../utils/commonUtils";
+import { handleAddToCart } from "../../services/CartService";
+import {handleRemoveFromWishlist, handleAddToWishlist} from "../../services/WishlistService";
+import { AuthContext } from "../../contexts/AuthContext";
+
 
 export const ProductDetails = () => {
     
@@ -13,6 +15,8 @@ export const ProductDetails = () => {
     const totalStars = 5;
     const activeStars = productDetail?.rating;
     const product = products?.find(product => product._id === productDetail._id);
+    const {authState} = useContext(AuthContext);
+    const token = authState?.token;
 
     const isInCart = isProductInCart(product, token, state);
     const isInWishlist = isProductInCart(product, token, state);
