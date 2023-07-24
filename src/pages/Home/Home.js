@@ -9,8 +9,8 @@ export const Home = () => {
     const navigate = useNavigate();
 
     const {categories, categoryClickHandler} = useContext(DataContext);
-    
-    
+
+
 
     return(
         <>

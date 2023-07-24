@@ -19,6 +19,12 @@ export const DataReducer = (state, action) => {
         case "SET_PRODUCTS" :
             return {...state, products: action.payload}
 
+        case "SET_INITIAL_WISHLIST":
+            return { ...state, wishlist: action.payload }
+            
+        case "SET_INITIAL_CART":
+            return { ...state, cart: action.payload }
+
         case "SET_PRODUCT_DETAILS":
             return {...state, productDetail : action.payload}
 
@@ -51,6 +57,19 @@ export const DataReducer = (state, action) => {
 
         case "CLEAR_FILTERS":
             return {...state, filterCategory: [], sortByPrice: "", rating: 0, priceRange: 0, search: ""}
+
+        case "INCREASE_PRODUCT_QUANTITY":
+            return { ...state, cart: action.payload }
+
+        case "DECREASE_PRODUCT_QUANTITY":
+            return { ...state, cart: action.payload }
+
+        case "ADD_TO_WISHLIST":
+            return { ...state, wishlist: action.payload }
+            
+        case "UPDATE_WISHLIST":
+            return { ...state, wishlist: action.payload }
+
         default:
             return state
     }

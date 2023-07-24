@@ -1,15 +1,21 @@
 import { FilterPage } from "./FilterPage";
 import "./Products.css";
 import { ProductCard } from "./ProductCard";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import {Loader} from "../../components/Loader/Loader";
 
 export const Products = () => {
     
-    const {products, loader} = useContext(DataContext);
+    const {products, categoryFilter, filteredProducts,  loader} = useContext(DataContext);
     
-    
+   
+    useEffect(() => {
+        console.log(products)
+        console.log(categoryFilter)
+        console.log(filteredProducts)
+    })
+
     return (
         <div className="product-main-container">
             <FilterPage />

@@ -1,4 +1,5 @@
 import {toast} from "react-toastify"; 
+import { handleAddToWishlist, handleMoveToCart } from "./WishlistService";
 
 export const handleAddToCart = async(product, token, dispatch) => {
     if(token){
@@ -99,6 +100,25 @@ export const decreasedProductQuantity = async(productId, token, dispatch) => {
             dispatch({type: "DECREASE_PRODUCT_QUANTITY", payload: responseData.cart})
         }
         
+    }catch(error){
+        console.error(error);
+    }
+}
+
+export const handleMoveToWishlist = async(product, dispatch, state, token) => {
+    try{
+        const response = await fetch(`/api/user/cart/${product?._id}`,{
+            method: 'DELETE', 
+            headers: {
+                authorisation: token
+            }
+        });
+        if(response.status === 200){
+            const responseData = await response.json();
+            handleAddToWishlist(product, token, dispatch)
+            dispatch({type: "UPDATE_WISHLIST", payload: [...state?.wishlist, product]});
+            dispatch({type: "UPDATE_CART", payload: responseData.cart})
+        }
     }catch(error){
         console.error(error);
     }

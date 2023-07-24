@@ -9,7 +9,7 @@ export const FilterPage = () => {
         { label: "Low To High", value: "lowToHigh" },
         { label: "High To Low", value: "highToLow" },
     ];
-    const {categories,clearFilterHandler, priceRangeFilter, priceFilter, sortByPrice,filterCategory, filterByCategory, ratingFilter, filterByRatings, filterByPriceRange} = useContext(DataContext);
+    const {categories,clearFilterHandler, priceRangeFilter, priceFilter, sortByPrice,categoryFilter, filterByCategory, ratingFilter, filterByRatings, filterByPriceRange} = useContext(DataContext);
     return(
         <>
             <div className="filter-container">
@@ -36,7 +36,7 @@ export const FilterPage = () => {
                         {categories?.map(category =>  {
                             return (
                                 <label key={category._id}>
-                                    <input type="checkbox" key = {category.categoryName} value = {category.categoryName} checked = {filterCategory?.includes(category.categoryName)} onChange = {(e) => filterByCategory(e)} /> {category.categoryName} 
+                                    <input type="checkbox" key = {category.categoryName} value = {category.categoryName} checked = {categoryFilter?.includes(category.categoryName)} onChange = {(e) => filterByCategory(e)} /> {category.categoryName} 
                                 </label>
                             )        
                         })}

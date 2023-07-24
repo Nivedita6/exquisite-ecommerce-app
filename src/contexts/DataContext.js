@@ -10,7 +10,11 @@ export const DataProvider = ({children}) => {
     const [loader, setLoader] = useState(false);
     const navigate = useNavigate();
 
+    window.am_state = state
+
     const fetchData = async() => {
+
+        console.log("Fetching Data")
         try{
             setLoader(true);
             const productResponse = await fetch("/api/products");
@@ -65,7 +69,7 @@ export const DataProvider = ({children}) => {
     }
 
     const filterByCategory = (e) => {
-        dispatch( {type: "SET_FILTER_BY_CATEGORY" , payload: e.target.value})
+        dispatch( {type: "SET_CATEGORY_FILTER" , payload: e.target.value})
     }
 
     const sortByPrice = (e) => {
@@ -80,7 +84,7 @@ export const DataProvider = ({children}) => {
         dispatch({type: "FILTER_BY_RATING" , payload: e.target.value})
     }
 
-    const filteredProducts = state?.categoryFilter?.length > 0 ? state?.products?.filter(product => state?.categoryFilter?.includes(product?.category)) : state?.products
+    const filteredProducts = state?.categoryFilter?.length > 0 ? state?.products?.filter(product => state?.categoryFilter?.includes(product?.categoryName)) : state?.products
 
     const filteredByRatingsProducts = state?.rating === 0 ? filteredProducts : filteredProducts.filter(product => product?.rating >= state?.rating)
 
@@ -94,13 +98,12 @@ export const DataProvider = ({children}) => {
         dispatch({type: "CLEAR_FILTERS"});
     }
 
-
-    
-
-    useEffect(() => {fetchData()}, [])
+    useEffect(() => {
+        fetchData()
+    }, [])
 
     return(
-        <DataContext.Provider value = {{ loader, searchProductHandler, categoryClickHandler, filterByCategory, filterByPriceRange, sortByPrice, filterByRatings,clearFilterHandler,   products: searchedProducts,  categories: state.categories, categoryFilter: state.categoryFilter,priceFilter: state?.sortByPrice, ratingFilter : state?.rating, search: state?.search, priceRangeFilter: state?.priceRange}}>{children}</DataContext.Provider>
+        <DataContext.Provider value = {{ loader, searchProductHandler, categoryClickHandler, filterByCategory, filterByPriceRange, sortByPrice, filterByRatings,clearFilterHandler,   products: searchedProducts,  categories: state.categories, filteredProducts, categoryFilter: state.categoryFilter,priceFilter: state?.sortByPrice, ratingFilter : state?.rating, search: state?.search, priceRangeFilter: state?.priceRange}}>{children}</DataContext.Provider>
     )
 
 }
