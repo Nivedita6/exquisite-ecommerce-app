@@ -7,7 +7,7 @@ import {Cart} from "./pages/Cart/Cart";
 import { Products } from "./pages/ProductList/Products";
 import {ProductDetails} from "./pages/ProductList/ProductDetails";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
-import {Login} from "./pages/Profile/Login";
+import {Login} from "./pages/Login/Login";
 
 
 function App() {

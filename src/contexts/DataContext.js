@@ -103,7 +103,7 @@ export const DataProvider = ({children}) => {
     }, [])
 
     return(
-        <DataContext.Provider value = {{ loader, searchProductHandler, categoryClickHandler, filterByCategory, filterByPriceRange, sortByPrice, filterByRatings,clearFilterHandler,   products: searchedProducts,  categories: state.categories, filteredProducts, categoryFilter: state.categoryFilter,priceFilter: state?.sortByPrice, ratingFilter : state?.rating, search: state?.search, priceRangeFilter: state?.priceRange}}>{children}</DataContext.Provider>
+        <DataContext.Provider value = {{ loader, getProductDetails, searchProductHandler, categoryClickHandler, filterByCategory, filterByPriceRange, sortByPrice, filterByRatings,clearFilterHandler,   products: searchedProducts,  categories: state.categories, filteredProducts, categoryFilter: state.categoryFilter,priceFilter: state?.sortByPrice, ratingFilter : state?.rating, search: state?.search, priceRangeFilter: state?.priceRange}}>{children}</DataContext.Provider>
     )
 
 }

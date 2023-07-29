@@ -7,6 +7,7 @@ import { handleAddToCart } from "../../services/CartService";
 import { isProductInCart, isProductInWishlist } from "../../utils/commonUtils";
 import {handleAddToWishlist, handleRemoveFromWishlist} from "../../services/WishlistService";
 
+
 export const ProductCard = ({product}) => {
     
     const { _id, title, img, price, categoryName, rating } = product;
@@ -26,7 +27,7 @@ export const ProductCard = ({product}) => {
 
     return(
         <div key = {_id} className = "card">
-            <img src = {img} className = "card-img" alt = {title} onClick={() => navigate(`/product/${product._id}`)}></img>
+            <img src = {img} className = "card-img" alt = {title} onClick={() => getProductDetails(_id)}></img>
             <div className = "card-info">
                 <div className = "card-title">
                     <h3 className = "card-title-header">{title}</h3>

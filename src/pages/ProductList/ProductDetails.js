@@ -35,7 +35,7 @@ export const ProductDetails = () => {
             <div className="single-card-container">
                 <div className="single-card">
                     <div className="single-card-left">
-                        <img src = {productDetail?.img} alt = "" className="single-card-img"/>
+                        <img src = {productDetail?.img} alt = "cake image" className="single-card-img"/>
                     </div>
 
                     <div className="single-card-right">
